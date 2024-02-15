@@ -44,7 +44,7 @@ namespace Fluids {
     /**
      * Pick a fruit
      */
-    //% blockId=tropic_pick block="Create Drop %Image"
+    //% blockId=tropic_pick block="Create Drop %myImage"
     export function CreateDrop (myImage: Image) {
         let mySprite3 = sprites.create(myImage, SpriteKind.Liquid)
     }
