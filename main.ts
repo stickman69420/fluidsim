@@ -5,13 +5,7 @@ namespace SpriteKind {
     export const hidbogsrite = SpriteKind.create()
     export const pin = SpriteKind.create()
     export const box = SpriteKind.create()
-}
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite2.setFlag(SpriteFlag.Invisible, true)
-})
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    mySprite2.setFlag(SpriteFlag.Invisible, false)
-})
+} 
 sprites.onCreated(SpriteKind.Liquid, function (sprite) {
     mySprite = sprites.create(img`
         1 1 1 1 1 
@@ -50,7 +44,7 @@ namespace Fluids {
     /**
      * Pick a fruit
      */
-    //% blockId=tropic_pick block="pick a %fruit"
+    //% blockId=tropic_pick block="Create Drop %Image"
     export function CreateDrop (myImage: Image) {
         let mySprite3 = sprites.create(myImage, SpriteKind.Liquid)
     }
