@@ -6,6 +6,19 @@ namespace SpriteKind {
     export const pin = SpriteKind.create()
     export const box = SpriteKind.create()
 }
+/**
+ * Pick some fruit and peel it.
+ */
+//% weight=70 icon="\uf185" color=#EC7505
+namespace Fluids {
+    /**
+     * Pick a fruit
+     */
+    //% blockId=tropic_pick block="pick a %fruit"
+    export function CreateDrop (myImage: Image) {
+        let mySprite3 = sprites.create(myImage, SpriteKind.Liquid)
+    }
+}
 let mySprite2: Sprite = null
 let mySprite: Sprite = null
 let i = 0
