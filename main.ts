@@ -1,5 +1,5 @@
 namespace SpriteKind {
-    export const Liguid = SpriteKind.create()
+    export const Liquid = SpriteKind.create()
     export const hidbox = SpriteKind.create()
     export const hidboxleft = SpriteKind.create()
     export const hidbogsrite = SpriteKind.create()
@@ -13,7 +13,10 @@ let i2 = false
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite2.setFlag(SpriteFlag.Invisible, true)
 })
-sprites.onCreated(SpriteKind.Liguid, function (sprite) {
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    mySprite2.setFlag(SpriteFlag.Invisible, false)
+})
+sprites.onCreated(SpriteKind.Liquid, function (sprite) {
     mySprite = sprites.create(img`
         1 1 1 1 1 
         . . . . . 
@@ -43,12 +46,9 @@ sprites.onCreated(SpriteKind.Liguid, function (sprite) {
         mySprite.setFlag(SpriteFlag.Invisible, true)
     }
 })
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    mySprite2.setFlag(SpriteFlag.Invisible, false)
-})
 forever(function () {
     i = 0
-    for (let value of sprites.allOfKind(SpriteKind.Liguid)) {
+    for (let value of sprites.allOfKind(SpriteKind.Liquid)) {
         sprites.allOfKind(SpriteKind.hidbox)[i].setPosition(value.x, value.y + 5)
         sprites.allOfKind(SpriteKind.hidboxleft)[i].setPosition(value.x - 5, value.y)
         sprites.allOfKind(SpriteKind.hidbogsrite)[i].setPosition(value.x + 5, value.y)
@@ -66,7 +66,7 @@ forever(function () {
                 i2 = true
             }
         }
-        for (let value2 of sprites.allOfKind(SpriteKind.Liguid)) {
+        for (let value2 of sprites.allOfKind(SpriteKind.Liquid)) {
             if (value.overlapsWith(value2)) {
                 i2 = true
             }
@@ -101,7 +101,7 @@ forever(function () {
                 i2 = true
             }
         }
-        for (let value2 of sprites.allOfKind(SpriteKind.Liguid)) {
+        for (let value2 of sprites.allOfKind(SpriteKind.Liquid)) {
             if (value.overlapsWith(value2)) {
                 i2 = true
             }
@@ -136,7 +136,7 @@ forever(function () {
                 i2 = true
             }
         }
-        for (let value2 of sprites.allOfKind(SpriteKind.Liguid)) {
+        for (let value2 of sprites.allOfKind(SpriteKind.Liquid)) {
             if (value.overlapsWith(value2)) {
                 i2 = true
             }
@@ -160,7 +160,7 @@ forever(function () {
         }
     }
     i = 0
-    for (let value of sprites.allOfKind(SpriteKind.Liguid)) {
+    for (let value of sprites.allOfKind(SpriteKind.Liquid)) {
         if (sprites.allOfKind(SpriteKind.hidbox)[i].image.equals(img`
             1 1 1 1 1 
             . . . . . 
